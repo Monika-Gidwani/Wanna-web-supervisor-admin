@@ -32,24 +32,46 @@
 
 /* Animation */
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* ================= HERO FINAL ================= */
+/* ================= HERO FINAL V3 ================= */
 
-.hero {
+.hero-container {
   width: 100%;
-  height: calc(100vh - 56px); /* Full screen minus navbar */
-  background-size: cover;     /* Fill screen */
-  background-position: center;
-  background-repeat: no-repeat;
+  height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
+  /* Mobile viewport support */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+  /* REQUIRED: Black background for empty space */
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
-@media (max-width: 768px) {
-  .hero {
-    background-size: contain; /* Show full image */
-    background-color: black;  /* Fill empty space nicely */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Desktop default: Fill screen, no whitespace on sides */
+  object-position: center;
+}
+
+/* ===== TABLET & MOBILE OPTIMIZATION (max-width: 1024px) ===== */
+@media (max-width: 1024px) {
+  .hero-container {
+    height: calc(100dvh - 56px);
+  }
+
+  .hero-image {
+    object-fit: contain;
+    /* Mobile/Tablet: Show full image, no cropping */
   }
 }

@@ -3,10 +3,9 @@ import file from '../../assets/file.png';
 
 const Home = () => {
   return (
-    <div
-      className="hero"
-      style={{ backgroundImage: `url(${file})` }}
-    ></div>
+    <div className="hero-container">
+      <img src={file} alt="Hero" className="hero-image" />
+    </div>
   );
 };
 
