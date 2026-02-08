@@ -133,35 +133,37 @@ const SupervisorDashboard = () => {
       <section className="table-container">
         <h2>Ongoing Events</h2>
 
-        <table className="alerts-table">
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Type</th>
-              <th>Coordinates</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {alerts.map((a) => (
-              <tr key={a.id}>
-                <td>{a.email}</td>
-                <td>{a.type}</td>
-                <td>
-                  {a.lat && a.lng ? `${a.lat}, ${a.lng}` : "N/A"}
-                </td>
-                <td>
-                  <button
-                    className="locate-btn"
-                    onClick={() => locate(a.lat, a.lng)}
-                  >
-                    Locate
-                  </button>
-                </td>
+        <div className="table-wrapper">
+          <table className="alerts-table">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Coordinates</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {alerts.map((a) => (
+                <tr key={a.id}>
+                  <td>{a.email}</td>
+                  <td>{a.type}</td>
+                  <td>
+                    {a.lat && a.lng ? `${a.lat}, ${a.lng}` : "N/A"}
+                  </td>
+                  <td>
+                    <button
+                      className="locate-btn"
+                      onClick={() => locate(a.lat, a.lng)}
+                    >
+                      Locate
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

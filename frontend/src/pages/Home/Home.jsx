@@ -1,13 +1,12 @@
 import React from 'react';
-import file from '../../assets/file.png'
+import file from '../../assets/file.png';
+
 const Home = () => {
   return (
     <div
-  className="hero"
-  style={{
-    backgroundImage: `url(${file})`,
-  }}
-></div>
+      className="hero"
+      style={{ backgroundImage: `url(${file})` }}
+    ></div>
   );
 };
 
